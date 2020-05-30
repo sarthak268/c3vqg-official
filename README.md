@@ -22,7 +22,7 @@ In order to clone our repository and install all the required dependencies, foll
 
 ```
 git clone https://github.com/sarthak268/c3vqg-official.git
-cd iq
+cd c3vqg-official
 virtualenv -p python2.7 env
 source env/bin/activate
 pip install -r requirements.txt
