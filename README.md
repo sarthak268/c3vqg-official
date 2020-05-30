@@ -21,7 +21,7 @@ In case you find any of this useful, consider citing:
 In order to clone our repository and install all the required dependencies, follow these set of commands:
 
 ```
-git clone https://github.com/ranjaykrishna/iq.git
+git clone https://github.com/sarthak268/c3vqg-official.git
 cd iq
 virtualenv -p python2.7 env
 source env/bin/activate
