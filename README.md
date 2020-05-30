@@ -60,3 +60,12 @@ In order to evaluate the trained model using various language modeling metrics, 
 python evaluate.py
 ```
 
+## Contact
+
+If you face any problem in running this code, you can contact us at {shagun16088, anish16223 sarthak16189}@iiitd.ac.in.
+
+## License
+
+Copyright (c) 2020 Shagun Uppal, Anish Madan, Sarthak Bhagat, Yi Yu, Rajiv Ratn Shah.
+
+For license information, see LICENSE or http://mit-license.org
