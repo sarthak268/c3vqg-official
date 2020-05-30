@@ -16,6 +16,8 @@ In case you find any of this useful, consider citing:
 }
 ```
 
+The structure of the code is adopted from https://github.com/ranjaykrishna/iq.
+
 ## Installing Dependencies
 
 In order to clone our repository and install all the required dependencies, follow these set of commands:
