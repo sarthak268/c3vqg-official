@@ -23,7 +23,9 @@ class EncoderCNN(nn.Module):
     def init_weights(self):
         """Initialize the weights.
 	"""
-        self.cnn.fc.weight.data.normal_(0.0, 0.02)
+        # self.cnn.fc.weight.data.normal_(0.0, 0.02)
+        nn.init.kaiming_normal_(self.cnn.fc.weight,nonlinearity='relu')
+
         self.cnn.fc.bias.data.fill_(0)
 
     def forward(self, images):

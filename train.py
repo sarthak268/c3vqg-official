@@ -608,22 +608,22 @@ if __name__ == '__main__':
     
     # Data parameters.
     parser.add_argument('--vocab-path', type=str,
-                        default='../iq/data/processed/vocab_iq.json',
+                        default='data/processed/vocab_iq.json',
                         help='Path for vocabulary wrapper.')
     parser.add_argument('--dataset', type=str,
-                        default='../iq/data/processed/iq_dataset.hdf5',
+                        default='data/processed/iq_dataset.hdf5',
                         help='Path for train annotation json file.')
     parser.add_argument('--val-dataset', type=str,
-                        default='../iq/data/processed/iq_val_dataset.hdf5',
+                        default='data/processed/iq_val_dataset.hdf5',
                         help='Path for train annotation json file.')
     parser.add_argument('--train-dataset-weights', type=str,
-                        default='../iq/data/processed/iq_train_dataset_weights.json',
+                        default='data/processed/iq_train_dataset_weights.json',
                         help='Location of sampling weights for training set.')
     parser.add_argument('--val-dataset-weights', type=str,
-                        default='../iq/data/processed/iq_val_dataset_weights.json',
+                        default='data/processed/iq_val_dataset_weights.json',
                         help='Location of sampling weights for training set.')
     parser.add_argument('--cat2name', type=str,
-                        default='../iq/data/processed/cat2name.json',
+                        default='data/processed/cat2name.json',
                         help='Location of mapping from category to type name.')
     parser.add_argument('--load-model', type=str, default=None,
                         help='Location of where the model weights are.')
@@ -672,7 +672,7 @@ if __name__ == '__main__':
                         help='For implementing step two of our approach.')
     parser.add_argument('--center_loss', type=bool, default=True,
                         help='For implementing center loss.')
-    parser.add_argument('--bayes', type=bool, default=False,
+    parser.add_argument('--bayes', type=bool, default=True,
                         help='For adding a bayes-vae prior.')
 
     parser.add_argument('--train_log_file_suffix',default='train',type=str)

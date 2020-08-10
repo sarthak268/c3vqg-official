@@ -92,9 +92,14 @@ class DecoderRNN(BaseRNN):
 
     def init_weights(self):
         """Initialize weights"""
-        self.embedding.weight.data.uniform_(-0.1, 0.1)
-        self.out.weight.data.uniform_(-0.1, 0.1)
+
+        # self.embedding.weight.data.uniform_(-0.1, 0.1)
+        # self.out.weight.data.uniform_(-0.1, 0.1)
         self.out.bias.data.fill_(0)
+        
+        nn.init.kaiming_uniform_(self.embedding.weight,nonlinearity='relu')
+        nn.init.kaiming_uniform_(self.out.weight,nonlinearity='relu')
+
 
     def forward_step(self, input_var, hidden, encoder_outputs, function):
         batch_size = input_var.size(0)

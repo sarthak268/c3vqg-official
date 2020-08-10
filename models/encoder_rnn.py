@@ -24,8 +24,8 @@ class EncoderRNN(BaseRNN):
          >>> output, hidden = encoder(input)
     """
 
-    def __init__(self, vocab_size, max_len, hidden_size,
-                 input_dropout_p=0, dropout_p=0, n_layers=1,
+    def __init__(self, vocab_size, max_len, hidden_size, ques_encoder=False,
+                 input_dropout_p=0.2, dropout_p=0.2, n_layers=1,
                  bidirectional=False, rnn_cell='lstm', variable_lengths=False):
         """Constructor for EncoderRNN.
 
@@ -52,12 +52,14 @@ class EncoderRNN(BaseRNN):
         self.rnn = self.rnn_cell(hidden_size, hidden_size, n_layers,
                                  batch_first=True, bidirectional=bidirectional,
                                  dropout=dropout_p)
+
         self.init_weights()
 
     def init_weights(self):
         """Initialize weights.
         """
-        self.embedding.weight.data.uniform_(-0.1, 0.1)
+        # self.embedding.weight.data.uniform_(-0.1, 0.1)
+        nn.init.kaiming_uniform_(self.embedding.weight,nonlinearity='relu')
 
     def forward(self, input_var, input_lengths=None, h0=None):
         """Applies a multi-layer RNN to an input sequence.
@@ -75,8 +77,9 @@ class EncoderRNN(BaseRNN):
             - **hidden** (num_layers * num_directions, batch, hidden_size):
                 Variable containing the features in the hidden state h
         """
-        embedded = self.embedding(input_var)
+        embedded = self.embedding(input_var.long())
         embedded = self.input_dropout(embedded)
+        
         if self.variable_lengths:
             embedded = nn.utils.rnn.pack_padded_sequence(
                     embedded, input_lengths, batch_first=True)

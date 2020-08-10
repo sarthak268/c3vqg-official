@@ -12,7 +12,7 @@ class MLP(nn.Module):
     """
 
     def __init__(self, input_size, hidden_size, num_classes,
-                 num_layers=1, dropout_p=0.0):
+                 num_layers=1, dropout_p=0.4):
         """Constructor for MLP.
 
         Args:
@@ -36,6 +36,8 @@ class MLP(nn.Module):
                 odim = num_classes
             fc = nn.Linear(idim, odim)
             fc.weight.data.normal_(0.0,  math.sqrt(2. / idim))
+            # nn.init.kaiming_normal_(fc.weight,nonlinearity='relu')
+
             fc.bias.data.fill_(0)
             layers.append(('fc'+str(i), fc))
             if i != num_layers-1:
