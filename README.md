@@ -1,6 +1,6 @@
 # C3VQG: Category Consistent Cyclic Visual Question Generation
 
-This repository contains code for the paper <a href="https://arxiv.org/abs/2005.07771"> C3VQG: Category Consistent Cyclic Visual Question Generation</a>.
+This repository contains code for the paper <a href="https://arxiv.org/abs/2005.07771"> C3VQG: Category Consistent Cyclic Visual Question Generation</a> accepted at ACM Multimedia Asia 2020, Singapore.
 
 ![C3VQG Training Architecture](c3vqg_figure.png)
 
